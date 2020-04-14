@@ -48,7 +48,7 @@ void Config::loadDefaults( void )
 	file_name_position = 0;
 	file_name_size = 1.0f;
 	show_folders = true;
-	install_dir = ".";
+	install_dir = "/usr/share/mihphoto";
 	rotate_by_exif = true;
 	zoom_speed = 0.8;
 	always_show_scroll = false;

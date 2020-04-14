@@ -52,11 +52,7 @@ int main(int argc, char *argv[])
 	#if defined(Q_OS_SYMBIAN)
 		g_config.install_dir = ":";
 	#else
-		#ifdef DATADIR
-			g_config.install_dir = DATADIR;
-		#else
-			g_config.install_dir = app.applicationDirPath() + QDir::separator() + "..";
-		#endif
+		g_config.install_dir = "/usr/share/mihphoto";
 	#endif
 	QStringList args = app.arguments();
 	QString startfile = "";
