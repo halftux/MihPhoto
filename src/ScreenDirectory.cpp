@@ -926,10 +926,10 @@ void ScreenDirectory::_updateThumbsLocations( void )
 	_total_height = rows * row_height;
 	
 	int new_scroll = 0;
-    if ( old_height > 0 )
-        new_scroll = old_pos * _total_height / old_height;
+	if ( old_height > 0 )
+		new_scroll = old_pos * _total_height / old_height;
 	_scroll_pos = _scroll_pos_dest = new_scroll;
-    _limitScroll();
+	_limitScroll();
 }
 
 void ScreenDirectory::_limitScroll( int & scroll )
@@ -948,14 +948,14 @@ void ScreenDirectory::_limitScroll( void )
 
 void ScreenDirectory::_loadIcons( void )
 {
-        if ( g_config.background_color.value() < 128 )
+	if ( g_config.background_color.value() < 128 )
 	{
-                _scroll_indicator.load( g_config.install_dir + "/icons/scroll-indicator.svg" );
-        	_folder_icon.load( g_config.install_dir + "/images/folder.svg" );
-        } else {
-                _scroll_indicator.load( g_config.install_dir + "/icons/scroll-indicator-dark.svg" );
-        	_folder_icon.load( g_config.install_dir + "/images/folder-dark.svg" );
-        }
+		_scroll_indicator.load( g_config.install_dir + "/icons/scroll-indicator.svg" );
+		_folder_icon.load( g_config.install_dir + "/images/folder.svg" );
+	} else {
+		_scroll_indicator.load( g_config.install_dir + "/icons/scroll-indicator-dark.svg" );
+		_folder_icon.load( g_config.install_dir + "/images/folder-dark.svg" );
+	}
 }
 
 void ScreenDirectory::_clearThumbs( void )

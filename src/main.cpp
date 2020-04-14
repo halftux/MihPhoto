@@ -41,7 +41,7 @@ void print_console_version( void )
 {
 	printf("MihPhoto - Photo viewer for multi-touch devices\n");
 	printf("Copyright (C) 2010 Mihai Paslariu\n");
-	printf("Version %.2lf\n", VERSION );
+	printf("Version %s\n", APP_VERSION );
 }
 
 int main(int argc, char *argv[])

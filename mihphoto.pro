@@ -1,14 +1,25 @@
 # Add files and directories to ship with the application 
 # by adapting the examples below.
 # file1.source = myfile
-dir1.source = icons
-dir2.source = images
-DEPLOYMENTFOLDERS = dir1 dir2
+TARGET = mihphoto
+installPrefix = /usr
+target.path = $${installPrefix}/bin
+DEPLOYMENT_PATH = /usr/share/$${TARGET}
+images.files = images/*
+images.path = $${DEPLOYMENT_PATH}/images
+icons.files = icons/*
+icons.path = $${DEPLOYMENT_PATH}/icons
+desktopfile.files = $${TARGET}.desktop
+desktopfile.path = /usr/share/applications/hildon
+icon.files = $${TARGET}64.png
+icon.path = /usr/share/icons/hicolor/64x64/apps
 
-DEFINES += VERSION=1.13
-VERSION = 1.13
+#DEFINES += VERSION="1.0.13"
+VERSION = 1.0.13
+#VERSION="\\"1.0.13\\""
+DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
-QT       += core gui svg
+QT       += core gui svg widgets
 
 SOURCES += \
     src/TouchUI.cpp \
@@ -47,22 +58,13 @@ HEADERS  += \
 FORMS += \
     src/ConfigDialog.ui
 
-	# Please do not modify the following two lines. Required for deployment.
-include(deployment.pri)
-qtcAddDeployment()
-
-OTHER_FILES += \
-    src/MihPhoto.rc \
-    qtc_packaging/debian_fremantle/rules \
-    qtc_packaging/debian_fremantle/README \
-    qtc_packaging/debian_fremantle/copyright \
-    qtc_packaging/debian_fremantle/control \
-    qtc_packaging/debian_fremantle/compat \
-    qtc_packaging/debian_fremantle/changelog
-
-
 RESOURCES += \
     src/mihphoto.qrc
 
 RC_FILE = src/MihPhoto.rc
 
+INSTALLS += images \
+    icons \
+    icon \
+    desktopfile \
+    target

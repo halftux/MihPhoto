@@ -154,10 +154,10 @@ void MainWindow::about()
 		       "Copyright (C) 2010-2014 Mihai Paslariu</p>"
                "<p>Version for Maemo compiled by Halftux.</p>";
 
-	QString version;
-	version.sprintf("<p>Version %.2lf</p>", VERSION );
+	//QString version;
+	//version.sprintf("<p>Version %.2lf</p>", VERSION );
 
-	QMessageBox::about(this, tr("About MihPhoto"), name + version + license );
+	QMessageBox::about(this, tr("About MihPhoto"), name + APP_VERSION + license );
 }
 
 void MainWindow::changeFullscreen()
